@@ -1,0 +1,7 @@
+.calendar input[type="date"] {
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

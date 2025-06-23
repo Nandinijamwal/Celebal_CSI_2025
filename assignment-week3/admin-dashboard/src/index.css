@@ -1,0 +1,122 @@
+/* Root and Theme Variables */
+:root {
+  --background: #ffffff;
+  --text: #222222;
+  --card: #f5f5f5;
+  --primary: #007bff;
+}
+
+body.dark {
+  --background: #1c1c1c;
+  --text: #f0f0f0;
+  --card: #2c2c2c;
+  --primary: #66b2ff;
+}
+
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px; /* Increased for readability */
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* App Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: var(--card);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: var(--text);
+  font-size: 1.2rem;
+  display: block;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--background);
+  overflow-y: auto;
+}
+
+/* Card Component */
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle input[type="checkbox"] {
+  width: 50px;
+  height: 24px;
+  appearance: none;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  transition: background 0.3s;
+  cursor: pointer;
+  outline: none;
+}
+
+.theme-toggle input[type="checkbox"]:checked {
+  background: var(--primary);
+}
+
+.theme-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.theme-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(26px);
+}

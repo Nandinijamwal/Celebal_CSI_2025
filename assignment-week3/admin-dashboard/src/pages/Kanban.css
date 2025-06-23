@@ -1,0 +1,111 @@
+/* Wrapper for Kanban board */
+.kanban-wrapper {
+  padding: 20px;
+  font-size: 18px;
+  color: var(--kanban-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Add Task section */
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.add-task button {
+  padding: 10px 16px;
+  background-color: var(--kanban-button);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.add-task button:hover {
+  background-color: var(--kanban-button-hover);
+}
+
+/* Kanban board container */
+.kanban {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Kanban columns */
+.column {
+  flex: 1;
+  min-width: 250px;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: var(--kanban-column-bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: background-color 0.3s ease;
+}
+
+.column.todo {
+  background-color: var(--kanban-todo);
+}
+
+.column.doing {
+  background-color: var(--kanban-doing);
+}
+
+.column.done {
+  background-color: var(--kanban-done);
+}
+
+/* Task cards */
+.task {
+  background: white;
+  color: black;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: grab;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.task:hover {
+  transform: scale(1.02);
+}
+
+/* Light theme variables */
+:root {
+  --kanban-column-bg: #f1f1f1;
+  --kanban-button: #1e90ff;
+  --kanban-button-hover: #1c7ed6;
+  --kanban-text: #222;
+  --kanban-todo: #e3f2fd;
+  --kanban-doing: #fff9c4;
+  --kanban-done: #c8e6c9;
+}
+
+/* Dark theme variables */
+body.dark {
+  --kanban-column-bg: #3a3a3a;
+  --kanban-button: #66b2ff;
+  --kanban-button-hover: #3399ff;
+  --kanban-text: #ffffff;
+  --kanban-todo: #37474f;
+  --kanban-doing: #5c5c2e;
+  --kanban-done: #2e7d32;
+}
+
+body.dark .task {
+  background: #ffffff;
+  color: #000000;
+}
